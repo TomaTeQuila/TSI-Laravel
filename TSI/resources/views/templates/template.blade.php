@@ -12,7 +12,7 @@
    {{-- Navbar --}}
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark @if(Route::current()->getName()=='hub.register' || Route::current()->getName()=='hub.login') d-none @endif">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Inicio</a>
+      <a class="navbar-brand" href="#">Aragun</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,6 +41,12 @@
               <a class="nav-link" href="{{route('usuario.logout')}}">
                   <i class="material-symbols-outlined" style="vertical-align: -6px;">logout</i>
                   Cerrar sesion
+              </a>
+          </li>
+          <li class="nav-item @if(Gate::denies('usuario-login')) d-none @endif">
+              <a class="nav-link" href="">
+                  <i class="material-symbols-outlined" style="vertical-align: -6px;">person</i>
+                  Perfil
               </a>
           </li>
       </div>
